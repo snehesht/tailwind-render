@@ -1,6 +1,6 @@
 {
   "name": "tailwind-render",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Render templates with tailwindcss",
   "main": "src/index.js",
   "scripts": {
