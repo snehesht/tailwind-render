@@ -20,7 +20,7 @@ const baseTailwindCss = `@tailwind base;
 @tailwind components;
 @tailwind utilities;`
 
-const htmlContent = `<h1 class="text-xl font-bold">Hello World!</h1>`
+const htmlContent = `<h1 class="text-5xl font-bold text-blue-900 px-10 py-10">Hello World!</h1>`
 
 const renderedHtmlContent = compile(htmlContent, baseTailwindCss);
 
@@ -29,6 +29,7 @@ const renderedHtmlContent = compile(htmlContent, baseTailwindCss);
 // </head><body><h1 class="text-xl font-bold">Hello World!</h1></body></html>
 
 ```
+![Screenshot from 2022-07-03 04-44-35](https://user-images.githubusercontent.com/5787031/177032289-48a6e6f8-b012-47d7-bc2e-4b608471c77c.png)
 
 Inspired from [mailwind](https://github.com/soheilpro/mailwind) by [soheilpro](https://github.com/soheilpro)
 
