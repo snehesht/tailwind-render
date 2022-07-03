@@ -65,6 +65,7 @@ async function compile(htmlContent, inputCss = baseCss) {
     return generatedHtmlContent
   } catch(error) {
     console.error('Error', error)
+    throw error
   } finally {
     await rm(tmpdir, { recursive: true })
   }
