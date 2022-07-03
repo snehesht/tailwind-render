@@ -12,6 +12,17 @@ const baseCss = `@tailwind base;
 @tailwind components;
 @tailwind utilities;`
 
+// TailwindCss Config
+const defaultTailwindConfig = `
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+`
+
 async function makeTempDir() {
   return await mkdtemp(path.join(os.tmpdir(), `tailwind_render_${Math.random().toString(36).substring(2, 15)}`));
 }
@@ -26,11 +37,13 @@ async function compile(htmlContent, inputCss = baseCss) {
     const htmlContentFile = path.join(tmpdir, 'content.html')
     const inputCssFile = path.join(tmpdir, 'input.css')
     const generatedCssFile = path.join(tmpdir, 'generated.css')
+    const tailwindConfigFile = path.join(tmpdir, 'tailwind.config.js')
     await writeFile(htmlContentFile, htmlContent);
     await writeFile(inputCssFile, inputCss);
+    await writeFile(tailwindConfigFile, defaultTailwindConfig);
 
     // Run tailwind CLI to generate CSS based on htmlContent
-    const { error, stdout, stderr } = await exec(`node ${tailwindCLI} --input ${inputCssFile} --content ${htmlContentFile} --output ${generatedCssFile}`)
+    const { error, stdout, stderr } = await exec(`node ${tailwindCLI} --input ${inputCssFile} --content ${htmlContentFile} --output ${generatedCssFile} --config ${tailwindConfigFile}`)
     if (error) {
       throw new Error(error)
     }
