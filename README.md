@@ -1,6 +1,17 @@
-# tailwind-render
-### Render html template with Tailwind CSS
+### tailwind-render
+Render html template with Tailwind CSS
 
+### Usage
+```bash
+npm i tailwind-render
+````
+
+```js
+const compile = require('compile')
+
+const htmlContent = `<h1 class="text-xl font-bold">Hello World!</h1>`
+const renderedHtmlContent = compile(htmlContent)
+```
 
 
 ## License
