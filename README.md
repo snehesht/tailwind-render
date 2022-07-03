@@ -14,7 +14,7 @@ npm i tailwind-render
 ````
 
 ```js
-const compile = require('compile')
+const compile = require('tailwind-render')
 
 const baseTailwindCss = `@tailwind base;
 @tailwind components;
