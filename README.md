@@ -1,5 +1,12 @@
-### tailwind-render
+### tailwind-render [WIP]
 Render html template with Tailwind CSS
+
+Uses `tailwind cli` to generate and minify CSS from html before injecting into it.
+
+
+#### TODO
+ - [ ] Add ejs/pug template engine support
+ - [ ] Add ExpressJS support
 
 ### Usage
 ```bash
@@ -9,10 +16,21 @@ npm i tailwind-render
 ```js
 const compile = require('compile')
 
+const baseTailwindCss = `@tailwind base;
+@tailwind components;
+@tailwind utilities;`
+
 const htmlContent = `<h1 class="text-xl font-bold">Hello World!</h1>`
-const renderedHtmlContent = compile(htmlContent)
+
+const renderedHtmlContent = compile(htmlContent, baseTailwindCss);
+
+// <html><head><style type="text/css">*,::after,::before........................
+// .text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}</style>
+// </head><body><h1 class="text-xl font-bold">Hello World!</h1></body></html>
+
 ```
 
+Inspired from [mailwind](https://github.com/soheilpro/mailwind) by [soheilpro](https://github.com/soheilpro)
 
 ## License
 MIT License
