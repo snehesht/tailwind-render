@@ -20,9 +20,9 @@ const baseTailwindCss = `@tailwind base;
 @tailwind components;
 @tailwind utilities;`
 
-const htmlContent = `<h1 class="text-5xl font-bold text-blue-900 px-10 py-10">Hello World!</h1>`
+const html = `<h1 class="text-5xl font-bold text-blue-900 px-10 py-10">Hello World!</h1>`
 
-const renderedHtmlContent = compile(htmlContent, baseTailwindCss);
+const renderedHtmlContent = compile(html, baseTailwindCss);
 
 // <html><head><style type="text/css">*,::after,::before........................
 // .text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}</style>
