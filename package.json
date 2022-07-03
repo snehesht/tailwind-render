@@ -1,0 +1,33 @@
+{
+  "name": "tailwind-render",
+  "version": "0.1.0",
+  "description": "Render templates with tailwindcss",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --runInBand tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snehesht/tailwind-render.git"
+  },
+  "keywords": [
+    "tailwind",
+    "template",
+    "ssr",
+    "pug",
+    "ejs",
+    "email"
+  ],
+  "author": "snehesht",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snehesht/tailwind-render/issues"
+  },
+  "homepage": "https://github.com/snehesht/tailwind-render#readme",
+  "dependencies": {
+    "tailwindcss": "^3.1.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
